@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/techno_web/static/css/main.93b81070.css",
-    "main.js": "/techno_web/static/js/main.dd351941.js",
-    "static/js/453.e6f567f8.chunk.js": "/techno_web/static/js/453.e6f567f8.chunk.js",
-    "static/media/pattern1.png": "/techno_web/static/media/pattern1.bac6b425136c480c72d9.png",
-    "static/media/logo.png": "/techno_web/static/media/logo.ce6bae85f9b3fa4e0b87.png",
-    "index.html": "/techno_web/index.html",
-    "main.93b81070.css.map": "/techno_web/static/css/main.93b81070.css.map",
-    "main.dd351941.js.map": "/techno_web/static/js/main.dd351941.js.map",
-    "453.e6f567f8.chunk.js.map": "/techno_web/static/js/453.e6f567f8.chunk.js.map"
+    "main.css": "/Prete_moi/static/css/main.e58fe3d4.css",
+    "main.js": "/Prete_moi/static/js/main.1731462d.js",
+    "static/js/453.e6f567f8.chunk.js": "/Prete_moi/static/js/453.e6f567f8.chunk.js",
+    "static/media/pattern1.png": "/Prete_moi/static/media/pattern1.bac6b425136c480c72d9.png",
+    "static/media/logo.png": "/Prete_moi/static/media/logo.ce6bae85f9b3fa4e0b87.png",
+    "index.html": "/Prete_moi/index.html",
+    "main.e58fe3d4.css.map": "/Prete_moi/static/css/main.e58fe3d4.css.map",
+    "main.1731462d.js.map": "/Prete_moi/static/js/main.1731462d.js.map",
+    "453.e6f567f8.chunk.js.map": "/Prete_moi/static/js/453.e6f567f8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.93b81070.css",
-    "static/js/main.dd351941.js"
+    "static/css/main.e58fe3d4.css",
+    "static/js/main.1731462d.js"
   ]
 }
