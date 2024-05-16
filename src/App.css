@@ -1,0 +1,888 @@
+/* App.css */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Aligns logo to the left and user links to the right */
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  color: white;
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 50;
+}
+
+.logo img {
+  height: 30px; /* Adjust the height of the logo */
+}
+
+.links {
+  display: flex;
+  justify-content: center; /* Center aligns links */
+  flex-grow: 1; /* Allows links to grow and take up remaining space */
+}
+
+.links a {
+  margin: 0 10px; /* Add spacing between links */
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.user-links {
+  display: flex;
+  justify-content: flex-end; /* Aligns user links to the right */
+}
+
+.user-links a {
+  margin-left: 10px; /* Add spacing between user links */
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Styles pour la barre de navigation qui descend */
+.visible {
+  top: -50px; /* Hauteur de la barre de navigation */
+}
+
+.abutton {
+  margin-left: 20px; /* Add spacing between links */
+  background: none; /* Fond transparent */
+  border: none; /* Supprime la bordure par défaut */
+  padding: 0; /* Supprime le remplissage par défaut */
+  font: inherit; /* Utilise la même police que les liens */
+  font-size: 20px;
+  cursor: pointer; /* Change le curseur au survol */
+}
+
+.background-image {
+  background-image: url("/public/pattern1.png");
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+.content {
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+  height: 30%;
+}
+.content2 {
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  margin-top: 65px;
+}
+
+.content3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: "auto";
+}
+
+.annotation {
+  color: red;
+  text-align: center;
+  margin: auto;
+}
+
+.error,
+.required {
+  color: red;
+}
+
+.annotation {
+  color: red;
+  text-align: center;
+}
+
+.form-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 400px;
+  display: grid; /* Utiliser une grille CSS */
+  grid-gap: 5px; /* Espacement entre les éléments */
+  align-items: center;
+}
+
+.form-container-r {
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 20px;
+  margin-top: 70px;
+}
+
+.form-group {
+  display: flex; /* Utiliser un conteneur flex pour chaque groupe */
+  flex-direction: column; /* Aligner les éléments en colonne */
+  padding-block: 2px;
+}
+
+.form-group label {
+  margin-bottom: 5px; /* Espacement entre l'étiquette et l'input */
+}
+
+.rounded-input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.rounded-input-d {
+  height: 150px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* Styles spécifiques à la scrollbar */
+.suggestions-container select {
+  overflow-y: auto; /* Afficher une scrollbar uniquement lorsque nécessaire */
+  max-height: 150px; /* Hauteur maximale de la liste déroulante avec scrollbar */
+  width: calc(100%); /* Ajuster la largeur de la liste déroulante */
+}
+
+/* Styles de la poignée de défilement */
+.suggestions-container select::-webkit-scrollbar {
+  width: 8px; /* Largeur de la scrollbar */
+}
+
+/* Styles de la poignée de défilement */
+.suggestions-container select::-webkit-scrollbar-thumb {
+  background-color: #888; /* Couleur de la poignée */
+  border-radius: 5px; /* Bordure arrondie de la poignée */
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #ccc;
+  margin-right: 10px; /* Espacement entre le toggle switch et le texte */
+}
+
+.toggle-switch:before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.hidden-input:checked + .toggle-switch:before {
+  transform: translateX(25px);
+}
+
+.hidden-input:checked + .toggle-switch {
+  background-color: #007bff; /* Couleur de fond du toggle lorsqu'il est activé */
+}
+
+.text {
+  flex: 1;
+  text-align: left;
+  margin-right: 50px;
+}
+.white {
+  color: white;
+}
+.black {
+  color: black;
+}
+.title1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: auto;
+}
+.font1 {
+  font-size: 10px;
+  text-align: right;
+  margin: 0 2px;
+}
+
+.logo_image {
+  background-image: url("/public/logo.png");
+  background-size: cover;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+}
+
+.image {
+  background-image: url("https://images.freeimages.com/image/previews/c07/wild-wolf-mandala-5689721.png?fmt=webp&h=350");
+  background-size: cover;
+  background-position: center;
+  width: 150px;
+  height: 250px;
+  margin-left: 50px;
+  text-align: right;
+}
+
+.custom-button {
+  background-color: rgba(0, 0, 0, 0.8); /* Noir transparent */
+  color: #fff; /* Texte blanc */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 40px;
+  border-radius: 20px;
+}
+
+.custom-button:hover {
+  background-color: rgba(0, 0, 0, 0.9); /* Noir plus opaque au survol */
+}
+
+.link-button {
+  display: inline-block;
+  width: 400px; /* Largeur du bouton */
+  height: 266px; /* Hauteur du bouton pour respecter un ratio de 3:2 */
+  background-color: #007bff; /* Couleur de fond */
+  text-align: center; /* Centrer le texte à l'intérieur du bouton */
+  line-height: 266px; /* Centrer le texte verticalement */
+  text-decoration: none; /* Supprimer la décoration de lien */
+  border-radius: 8px; /* Ajouter des coins arrondis */
+  margin: 20px;
+  cursor: pointer; /* Curseur de type pointeur */
+  transition: background-color 0.3s; /* Transition fluide de la couleur de fond */
+}
+
+.link-button:hover {
+  background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+.category-selection {
+  margin-top: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.contact-icons a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc; /* Couleur de fond des cercles */
+  text-align: center;
+  line-height: 50px;
+  margin: 0 10px;
+}
+
+.contact-icons a:hover {
+  background-color: #999; /* Couleur de fond au survol */
+}
+
+.contact-icons img {
+  width: 30px; /* Ajustez la taille de l'image selon vos besoins */
+  height: 30px;
+  padding: 10px; /* Ajustez le rembourrage pour centrer l'image */
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.carousel-button {
+  width: 50px;
+  height: 50px;
+}
+
+.carousel-scroll {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Hide scrollbar by default */
+}
+
+.carousel-scroll:hover {
+  scrollbar-width: auto; /* Show scrollbar on hover */
+}
+
+.carousel-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-row {
+  display: flex;
+}
+
+.carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background-color: black;
+  color: white;
+  height: 25px;
+}
+
+.resizable-div {
+  display: inline-block;
+  width: fit-content; /* or min-content */
+}
+
+/* Style de la barre de recherche */
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: flex;
+  height: 40px; /* Hauteur fixe de la barre de recherche */
+}
+
+/* Positionnement du conteneur de suggestions */
+.suggestions-container {
+  top: calc(
+    100% + 5px
+  ); /* Positionnez-le juste en dessous de l'input de localisation */
+  left: 0; /* Alignez-le sur la gauche de son parent */
+  width: 100%; /* Prend toute la largeur de son parent */
+  background-color: white; /* Couleur de fond */
+  border: 1px solid #ccc; /* Bordure */
+  border-radius: 5px; /* Coins arrondis */
+  max-height: 150px; /* Hauteur maximale avec défilement */
+  overflow-y: auto;
+}
+
+.suggestions-container-r {
+  top: calc(
+    100% + 5px
+  ); /* Positionnez-le juste en dessous de l'input de localisation */
+  left: 0; /* Alignez-le sur la gauche de son parent */
+  width: 100%; /* Prend toute la largeur de son parent */
+  background-color: white; /* Couleur de fond */
+  border: 1px solid #ccc; /* Bordure */
+  border-radius: 5px; /* Coins arrondis */
+  max-height: 150px; /* Hauteur maximale avec défilement */
+  max-width: 175px; /* Hauteur maximale avec défilement */
+  overflow-y: auto;
+}
+
+/* Supprimez la règle CSS pour la scrollbar des suggestions-container, elle n'est plus nécessaire */
+
+/* Style de l'entrée de la barre de recherche */
+.search-input {
+  width: 100%;
+  padding: 10px; /* espace autour du texte dans l'entrée */
+  font-size: 16px;
+  border: 1px solid #ccc; /* bordure grise */
+  border-radius: 5px; /* coins arrondis */
+  outline: none; /* supprime la bordure de focus */
+  transition: border-color 0.3s ease; /* animation de transition pour la couleur de la bordure */
+}
+
+/* Style de la bordure de l'entrée lorsqu'elle est en focus */
+.search-input:focus {
+  border-color: #007bff; /* bordure bleue lorsqu'en focus */
+}
+
+/* Pour les Annonces */
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.annonces-list {
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.annonces-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.annonce-card {
+  background-color: white;
+  display: flex;
+  margin: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  width: calc(33.33% - 70px);
+  min-width: 220px;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Réinitialiser les marges et les rembourrages des enfants */
+.annonce-card > *:not(.submit-button, hr) {
+  margin: 0;
+  padding: 0;
+}
+
+.annonce-card img {
+  width: 200px;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+}
+
+.annonce-desc {
+  background-color: #fc0;
+  display: flex;
+  border: 2px solid #000;
+  border-radius: 5px;
+  width: calc(100% - 40px);
+  height: 100px;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style du menu déroulant */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style du bouton du menu déroulant */
+.dropbtn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Style des liens du menu déroulant */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ddd;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.annonce-container {
+  padding: 20px; /* Espacement autour du conteneur des annonces */
+}
+
+.annonce-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* 3 annonces par ligne, s'adaptant à la largeur de l'écran */
+  gap: 20px; /* Espacement entre les annonces */
+}
+
+.annonce-item {
+  background-color: blue; /* Couleur de fond des carrés d'annonces */
+  padding: 20px; /* Espacement à l'intérieur de chaque carré d'annonce */
+  border-radius: 10px; /* Coins arrondis */
+  color: white; /* Couleur du texte */
+}
+
+@media (max-width: 960px) {
+  .annonce-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* 2 annonces par ligne pour les petits écrans */
+  }
+}
+
+/* CSS pour les boutons */
+.center-container {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+.buttons-container button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: blue;
+}
+
+.buttons-container button:hover {
+  background-color: #cccccc;
+}
+
+/* CSS */
+.conversations-container {
+  position: fixed;
+  top: 70px; /* Même niveau que le bouton Conversations */
+  left: 0; /* Collé au bord gauche de la page */
+  bottom: 0; /* S'étend jusqu'en bas de la page */
+  width: 250px; /* Largeur de la fenêtre de conversation */
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  animation-duration: 0.5s;
+  z-index: 25;
+}
+
+.conversation-button {
+  position: fixed;
+  top: 70px; /* Plus bas que la barre de navigation */
+  left: 0px; /* Collé au bord gauche de la page */
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: left 0.5s ease;
+  z-index: 25;
+}
+
+.conversation-button.open {
+  left: 74px; /* Décalage de la gauche pour ouvrir la conversation */
+}
+
+/* Appliquer l'animation lors de l'ouverture */
+.conversations-container.open {
+  animation-name: slideInLeft;
+  animation-fill-mode: forwards;
+}
+/* Ajoutez une classe "closing" lors de la fermeture pour activer l'animation de fermeture */
+.conversations-container.closing {
+  animation-name: slideOutLeft;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Animation pour l'ouverture */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.link-style {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  margin-top: 30px;
+  padding: 0;
+}
+
+.conversation-liste {
+  padding: 5px;
+  border-top: 1px solid #ccc; /* Ajouter un trait de séparation */
+  border-bottom: 1px solid #ccc; /* Ajouter un trait de séparation */
+}
+
+.conversation-lien {
+  list-style: none; /* Supprimer les puces */
+  text-decoration: none; /* Supprimer la décoration du lien */
+}
+
+.vertical-band {
+  margin-top: 70px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 43%;
+  transform: translateX(-50%);
+  width: 50%; /* 2/3 de la largeur de la page */
+  background-color: #ffffff; /* Couleur de fond de la bande */
+}
+
+.messages-container {
+  height: calc(
+    100% - 50px
+  ); /* Hauteur de la bande moins la hauteur de l'entrée */
+  overflow-y: auto; /* Ajouter une barre de défilement si nécessaire */
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.input-container {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-container button {
+  height: 36px;
+  width: 90px; /* Largeur du bouton */
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  border: none; /* Supprimer la bordure */
+  border-radius: 0 5px 5px 0; /* Coins arrondis seulement à droite */
+  cursor: pointer; /* Curseur pointeur */
+  transition: background-color 0.3s; /* Animation de transition */
+  box-sizing: border-box;
+}
+.input-container input {
+  border-radius: 5px 0 0 5px; /* Coins arrondis seulement à droite */
+  height: 30px;
+  width: calc(100% - 100px);
+}
+.input-container button:hover {
+  background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+.message-right {
+  text-align: right;
+}
+
+.message-left {
+  text-align: left;
+}
+
+.message-bubble {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  margin-bottom: 10px;
+}
+
+.message-bubble p {
+  margin: 0;
+}
+
+.message-right .message-bubble {
+  background-color: #007bff; /* Bleu pour les messages de l'utilisateur */
+  color: white;
+}
+
+.message-left .message-bubble {
+  background-color: #f0f0f0; /* Blanc pour les autres messages */
+}
+
+.viewprofile {
+  margin-top: 80px;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 25%; /* Ajustez la largeur selon vos besoins */
+  /* Ajustez la hauteur selon vos besoins */
+  background-color: #ffffff; /* Couleur de fond */
+  border-left: 1px solid #ccc; /* Ajouter une bordure à gauche */
+  box-sizing: border-box; /* Inclure la bordure dans la largeur */
+}
+
+.review-button {
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.avis-text {
+  width: 100%;
+  height: 100px; /* Réglez la hauteur de la zone de texte selon vos préférences */
+  resize: vertical; /* Permettre à l'utilisateur de redimensionner la hauteur verticalement */
+}
+
+.avis-annonce {
+  background-color: #ffffff; /* Fond blanc */
+  padding: 20px; /* Ajoutez un espace autour du contenu */
+  border-radius: 5px; /* Coins arrondis */
+  margin-left: 20px; /* Marge à gauche pour séparer de la section principale */
+}
+
+.avis-annonce > div {
+  margin-bottom: 10px; /* Ajoute un espace entre les éléments enfants */
+}
+
+.annonces_all_avis {
+  border-radius: 5px;
+  border: 2px solid #000;
+  width: 30; /* Vous pouvez ajuster la largeur selon vos besoins */
+  background-color: #ffffff; /* Fond blanc */
+  margin-right: 2%;
+  margin-left: 2%; /* Ajoute une marge à droite pour séparer de la div de droite */
+  box-sizing: border-box;
+  width: calc(33% - 70px);
+  min-width: 220px; /* Garantit que la largeur inclut le padding */
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+.annonce-card {
+  /* Vos styles existants */
+  position: relative; /* Définit la position relative pour positionner l'image */
+}
+
+.annonce-card img {
+  width: 90%; /* Pour que l'image remplisse entièrement son conteneur */
+  height: 200px; /* Pour maintenir le ratio hauteur/largeur de l'image */
+  object-fit: cover; /* Pour ajuster la taille de l'image tout en conservant son ratio */
+  border-bottom: 1px solid #ccc; /* Ajoute une bordure inférieure à l'image */
+  border-radius: 5px; /* Coins arrondis */
+}
+
+/* CSS Profil */
+.pdp {
+  float: left; /* Permet de flotter l'image à gauche */
+  margin-right: 20px; /* Ajouter un espacement entre l'image et le texte */
+}
+
+.pdp img {
+  width: 150px; /* Ajustez la largeur de l'image selon vos besoins */
+  height: 150px; /* Ajustez la hauteur de l'image selon vos besoins */
+  border-radius: 50%; /* Pour créer une image circulaire */
+}
+
+@media (max-width: 600px) {
+  .center-container {
+    flex-direction: column; /* Mettre en colonne pour les petits écrans */
+    overflow-y: auto;
+    padding-top: 70px;
+  }
+  
+  .form-container {
+    margin-left: 1%; /* Supprimer la marge */
+    margin-top: 20px; /* Ajouter un espacement entre les formulaires */
+    width:80%;
+  }
+}
+
